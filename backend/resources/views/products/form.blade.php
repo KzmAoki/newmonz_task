@@ -3,7 +3,7 @@
     <dt>カテゴリ</dt>
     <dd>
         <select name="category_id" class="form-select">
-            <option value=""></option>
+            <option value="{{ $product->category->id }}" selected>{{ $product->category->name }}</option>
             @foreach (App\Models\Category::all() as $category)
             <option value="{{ $category->id }}"{{ Request::get('category_id') == $category->id ? ' selected' : ''}}>{{ $category->name }}</option>
             @endforeach
