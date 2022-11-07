@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <h1>ログイン</h1>
+@include('commons.errors')
 <form action="{{ route('login') }}" method="post">
     @csrf 
     <dl class="form-list">
