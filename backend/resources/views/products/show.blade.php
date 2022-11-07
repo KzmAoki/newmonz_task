@@ -23,7 +23,7 @@
   <form onsubmit="return confirm('本当に削除しますか？')" action="{{ route('products.destroy', $product) }}" method="post">
       @csrf 
       @method('delete')
-      <button type="submit">削除</button>
+      <button type="submit" class="btn btn-danger">削除</button>
   </form>
 </div>
 @endcan

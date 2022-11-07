@@ -1,16 +1,15 @@
 @csrf
 <dl class="form-list">
-    <dt>カテゴリ</dt>
+    <dt class="form-label">カテゴリ</dt>
     <dd>
         <select name="category_id" class="form-select">
-            <option value="{{ $product->category->id }}" selected>{{ $product->category->name }}</option>
             @foreach (App\Models\Category::all() as $category)
-            <option value="{{ $category->id }}"{{ Request::get('category_id') == $category->id ? ' selected' : ''}}>{{ $category->name }}</option>
+            <option value="{{ $category->id }}" @if($product->category_id == $category->id) selected @endif>{{ $category->name }}</option>
             @endforeach
         </select>
     </dd>
-    <dt>商品名</dt>
-    <dd><input type="text" name="name" value="{{ old('name', $product->name) }}"></dd>
-    <dt>価格</dt>
-    <dd><input type="number" name="price" min="100" value="{{ old('price', $product->price) }}"></dd>
+    <dt class="form-label">商品名</dt>
+    <dd><input type="text" name="name" value="{{ old('name', $product->name) }}" class="form-control"></dd>
+    <dt class="form-label">価格</dt>
+    <dd><input type="number" name="price" min="100" value="{{ old('price', $product->price) }}" class="form-control"></dd>
 </dl>

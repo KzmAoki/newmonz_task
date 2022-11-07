@@ -7,6 +7,6 @@
 @include('products.products')
 <form action="{{ route('logout') }}" method="post">
     @csrf 
-    <button type="submit">ログアウト</button>
+    <button type="submit" class="btn btn-secondary">ログアウト</button>
 </form>
 @endsection()
